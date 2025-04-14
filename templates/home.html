@@ -4,16 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>House_California</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 </head>
 
-<body>
 
+<!-- 
+ 0   MedInc      20640 non-null  float64
+ 1   HouseAge    20640 non-null  float64
+ 2   AveRooms    20640 non-null  float64
+ 3   AveBedrms   20640 non-null  float64
+ 4   Population  20640 non-null  float64
+ 5   AveOccup    20640 non-null  float64
+ 6   Latitude    20640 non-null  float64
+ 7   Longitude   20640 non-null  float64
+ 8   Price       20640 non-null  float64
+
+ 8.3252	41.0	6.984127	1.023810	322.0	2.555556	37.88	-122.23	4.526
+-->
+
+<body>
     <div>
         <h1>California House Price Prediction</h1>
-        <br>
 
+        <form action="{{url_for('predict')}}" method="post">
+            <label for="MedInc">MedInc: </label>
+            <br>
+            <input id="MedInc" name="MedInc" type="text" , placeholder="8.3252" required="required">
+            <br>
+            <br>
+
+            <label for="HouseAge">HouseAge: </label>
+            <br>
+            <input id="HouseAge" name="HouseAge" type="text" , placeholder="41.0" required="required">
+            <br>
+            <br>
+
+            <label for="AveRooms">AveRooms: </label>
+            <br>
+            <input id="AveRooms" name="AveRooms" type="text" , placeholder="6.984127" required="required">
+            <br>
+            <br>
+
+
+            <label for="AveBedrms">AveBedrms: </label>
+            <br>
+            <input id="AveBedrms" name="AveBedrms" type="text" , placeholder="1.023810" required="required">
+            <br>
+            <br>
+
+            <label for="Population">Population: </label>
+            <br>
+            <input id="Population" name="Population" type="text" , placeholder="322.0" required="required">
+            <br>
+            <br>
+
+            <label for="AveOccup">AveOccup: </label>
+            <br>
+            <input id="AveOccup" name="AveOccup" type="text" , placeholder="2.555556" required="required">
+            <br>
+            <br>
+
+            <label for="Latitude">Latitude: </label>
+            <br>
+            <input id="Latitude" name="Latitude" type="text" , placeholder="37.88" required="required">
+            <br>
+            <br>
+
+            <label for="Longitude">Longitude: </label>
+            <br>
+            <input id="Longitude" name="Longitude" type="text" , placeholder="-122.23" required="required">
+            <br>
+            <br>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
     </div>
+
+    <div>
+        <h3>Predicted Price:</h3>
+        {{prediction_text}}
+    </div>
+
 
 </body>
 
